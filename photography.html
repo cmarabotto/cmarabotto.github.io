@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/main.css">
+    <style>
+        /* Add some styling for the full-screen overlay */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #overlay img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        /* Add adjustments for full-screen image when sidebar is open */
+        #overlay.open {
+            z-index: 10000;
+        }
+
+        #overlay.open img {
+            max-width: 70%;
+            max-height: 70%;
+        }
+
+        #sidebar.open + #overlay {
+            margin-left: 26em;
+        }
+    </style>
+</head>
+
+<html>
+	<head>
+		<title>Christophe MARABOTTO</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Photography</h2>
+                                </header>
+                                <p>As a passionate photographer, you'll find some of my best landscape shots here.</p>
+                                <div class="posts">
+                                    <article>
+                                        <!-- Image 1 -->
+                                        <a href="#" class="image" onclick="openFullScreen('images/pic01.jpg')">
+                                            <img src="images/pic01.jpg" alt="" />
+                                        </a>
+                                        <h3>Le Lauzet-Ubaye, Alpes-de-Haute-Provence, France</h3>
+                                    </article>
+                                    <article>
+                                        <!-- Image 2 -->
+                                        <a href="#" class="image" onclick="openFullScreen('images/pic02.jpg')">
+                                            <img src="images/pic02.jpg" alt="" />
+                                        </a>
+                                        <h3>Les Orres, Hautes-Alpes, France</h3>
+                                    </article>
+                                    <article>
+                                        <!-- Image 3 -->
+                                        <a href="#" class="image" onclick="openFullScreen('images/pic03.jpg')">
+                                            <img src="images/pic03.jpg" alt="" />
+                                        </a>
+                                        <h3>Vue sur le Mont Aiguille - Massif du Vercors, Isère, France </h3>
+                                    </article>
+                                    <article>
+                                        <!-- Image 4 -->
+                                        <a href="#" class="image" onclick="openFullScreen('images/pic04.jpg')">
+                                            <img src="images/pic04.jpg" alt="" />
+                                        </a>
+                                        <h3>Baie d'Arromanche-les-Bains, Calvados, France</h3>
+                                    </article>
+                                    <article>
+                                        <!-- Image 5 -->
+                                        <a href="#" class="image" onclick="openFullScreen('images/pic05.jpg')">
+                                            <img src="images/pic05.jpg" alt="" />
+                                        </a>
+                                        <h3>Falaises d'Étretat, Seine-Maritime, France</h3>
+                                    </article>
+                                    <article>
+                                        <!-- Image 6 -->
+                                        <a href="#" class="image" onclick="openFullScreen('images/pic06.jpg')">
+                                            <img src="images/pic06.jpg" alt="" />
+                                        </a>
+                                        <h3>Corniglia, Ligurie, Italie </h3>
+                                    </article>
+                                </div>
+                            </section>
+
+						</div>
+					</div>
+                
+                <!-- Full-screen overlay container -->
+                <div id="overlay" onclick="closeFullScreen()">
+                    <!-- Add an onclick event to close the full-screen overlay -->
+                    <img id="fullScreenImage" src="" alt="" />
+                </div>
+
+                <script>
+                    function openFullScreen(imageSrc) {
+                        // Set the image source in the full-screen overlay
+                        document.getElementById('fullScreenImage').src = imageSrc;
+                        
+                        // Show the full-screen overlay
+                        document.getElementById('overlay').style.display = 'flex';
+                    }
+
+                    function closeFullScreen() {
+                        // Hide the full-screen overlay
+                        document.getElementById('overlay').style.display = 'none';
+                    }
+                </script>
+
+
+				<!-- Sidebar -->
+                <div id="sidebar">
+                    <div class="inner">
+
+                        <!-- Menu -->
+                        <nav id="menu">
+                            <header class="major">
+                                <h2>Menu</h2>
+                            </header>
+                            <ul>
+                                <li><a href="index.html">Homepage</a></li>
+                                <li><a href="https://scholar.google.com/citations?user=ZtzwcvsAAAAJ&hl=fr">Publications</a></li>
+                                <li>
+                                    <span class="opener">Personal Projects</span>
+                                    <ul>
+                                        <li><a href="fpv_drone_design.html">FPV Drone Design</a></li>
+                                        <li><a href="pneumonia_detection.html">Pneumonia Detection using Lipschitz Neural Network</a></li>
+                                        <li><a href="ppo.html">Understanding Proximal Policy Optimization with Super Mario Bros</a></li>
+                                        <li><a href="maxwell.html">MAXWELL: My Intelligent Assistant</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="music.html">Music</a></li>
+                                <li><a href="photography.html">Photography</a></li>
+                                <li><a href="documents/CV_AN.pdf" download="English CV">Download CV (EN)</a></li>
+                                <li><a href="documents/CV_FR.pdf" download="English FR">Download CV (FR)</a></li>
+                        </nav>
+
+                        <!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Get in touch</h2>
+                                </header>
+                                <ul class="contact">
+                                    <li class="icon solid fa-envelope"><a href="christophe.marabotto@epita.fr">christophe.marabotto@epita.fr</a></li>
+                                    <li class="icon solid fa-phone">
+                                        <!-- Use the tel: URI scheme to make the phone number clickable -->
+                                        <a href="tel:+33659562028">+33(0)659562028</a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                        <!-- Footer -->
+                            <footer id="footer">
+                                <p class="copyright">&copy; Christophe MARABOTTO. All rights reserved.</a></p>
+                            </footer>
+
+                    </div>
+                </div>
+
+        </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

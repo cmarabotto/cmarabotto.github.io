@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Christophe MARABOTTO</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+									<ul class="icons">
+										<li><a href="https://github.com/cmarabotto/" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></li>
+										<li><a href="https://www.linkedin.com/in/christophe-marabotto/" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
+										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+										<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+										<!-- <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> -->
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Pneumonia Detection Using Convolutional Neural Networks</h1>
+									</header>
+                                </section>
+
+                                <hr class="major" />
+
+								<h2>Challenge</h2>
+                                <p>In progress...</p>
+                                <p>The aim of this work is to develop an efficient neural network to perform binary classification on X-ray images.</p>
+                                <p>This work implement the architecture proposed in the paper <a href=https://www.hindawi.com/journals/jhe/2019/4180949/ target="_blank">"An Efficient Deep Learning Approach to Pneumonia Classification in Healthcare, Journal of Healthcare Engineering, 2019, Okeke Stephen et al".</a></p>
+							    <!-- <p>In addition, we will quantify the impact of lipschitz constraints on the performance of the proposed network.</p>-->
+
+                                <h2>Dataset</h2>
+                                <p>The dataset is organized into 3 folders (train, test, val) and contains subfolders for each image category (Pneumonia/Normal). There are 5,863 X-Ray images (JPEG) and 2 categories (Pneumonia/Normal).</p>
+                                <p>You can found it on kaggle at <a href=https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia target="_blank">https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia</a> </p>
+                                <span class="image main"><img src="images/dataset_pneumonia.png" /></span>
+
+                                <hr class="major" />
+
+								<h2>Convolutional Neural Network</h2>
+                                In Okeke Stephen et al., authors proposed the following architecture:
+                                <span class="image main"><img src="images/cnn_pneumonia_paper.png" /></span>
+                                After reimplementing this model with the Keras Sequential API, we obtain the following architecture:
+                                <span class="image half"><img src="images/keras_model.png" /></span>
+
+                                <hr class="major" />
+
+								<h2>Results</h2>
+                                After model testing, we obtain the following results:
+                                <span class="image half"><img src="images/ROC.png" /></span>
+                                <span class="image half"><img src="images/confusion_matrix.png" /></span>
+                                Which leads to an accuracy of 0.89.
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+                <div id="sidebar">
+                    <div class="inner">
+
+                        <!-- Menu -->
+                        <nav id="menu">
+                            <header class="major">
+                                <h2>Menu</h2>
+                            </header>
+                            <ul>
+                                <li><a href="index.html">Homepage</a></li>
+                                <li><a href="https://scholar.google.com/citations?user=ZtzwcvsAAAAJ&hl=fr">Publications</a></li>
+                                <li>
+                                    <span class="opener">Personal Projects</span>
+                                    <ul>
+                                        <li><a href="fpv_drone_design.html">FPV Drone Design</a></li>
+                                        <li><a href="pneumonia_detection.html">Pneumonia Detection using Lipschitz Neural Network</a></li>
+                                        <li><a href="ppo.html">Understanding Proximal Policy Optimization with Super Mario Bros</a></li>
+                                        <li><a href="maxwell.html">MAXWELL: My Intelligent Assistant</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="music.html">Music</a></li>
+                                <li><a href="photography.html">Photography</a></li>
+                                <li><a href="documents/CV_AN.pdf" download="English CV">Download CV (EN)</a></li>
+                                <li><a href="documents/CV_FR.pdf" download="English FR">Download CV (FR)</a></li>
+                        </nav>
+
+                        <!-- Section -->
+                            <section>
+                                <header class="major">
+                                    <h2>Get in touch</h2>
+                                </header>
+                                <ul class="contact">
+                                    <li class="icon solid fa-envelope"><a href="christophe.marabotto@epita.fr">christophe.marabotto@epita.fr</a></li>
+                                    <li class="icon solid fa-phone">
+                                        <!-- Use the tel: URI scheme to make the phone number clickable -->
+                                        <a href="tel:+33659562028">+33(0)659562028</a>
+                                    </li>
+                                </ul>
+                            </section>
+
+                        <!-- Footer -->
+                            <footer id="footer">
+                                <p class="copyright">&copy; Christophe MARABOTTO. All rights reserved.</a></p>
+                            </footer>
+
+                    </div>
+                </div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
