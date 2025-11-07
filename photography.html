@@ -1,215 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="path/to/main.css">
-    <style>
-        /* Add some styling for the full-screen overlay */
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography – Christophe Marabotto</title>
+  <link rel="stylesheet" href="css/latex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papXn3fY1sZs9cxZbKx9gDwGq0eShq6yI1F0Mjs1C2fR0AcWn1i+3BoH5h8NwzW1ZpSRz+RlRlP5+r6fj/0ZxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* Full-screen overlay */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+    }
 
-        #overlay img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        /* Add adjustments for full-screen image when sidebar is open */
-        #overlay.open {
-            z-index: 10000;
-        }
-
-        #overlay.open img {
-            max-width: 70%;
-            max-height: 70%;
-        }
-
-        #sidebar.open + #overlay {
-            margin-left: 26em;
-        }
-    </style>
+    /* Gallery styling */
+    .posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .posts article {
+      width: 300px;
+      text-align: center;
+    }
+    .posts img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: transform 0.2s;
+    }
+    .posts img:hover {
+      transform: scale(1.05);
+    }
+    /* Extra local styles to complement latex.css */
+    .profile-pic {
+      display: block;
+      margin: 2rem auto 1rem auto; /* center and add spacing */
+      width: 300px;
+      height: 300px;
+      object-fit: cover;          /* crop image properly */
+      border-radius: 50%;         /* circular crop */
+      border: 2px solid #444;     /* subtle LaTeX-like outline */
+    }
+    header {
+      text-align: center;
+    }
+  </style>
 </head>
 
-<html>
-	<head>
-		<title>Christophe MARABOTTO</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <!-- Header -->
+  <header>
+    <img src="figs/me.jpg" alt="Christophe Marabotto" class="profile-pic">
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+    <h1>Christophe Marabotto</h1>
+    <p><em>AI Research Engineer @ IRT Saint Exupéry</em></p>
 
-							<!-- Section -->
-                            <section>
-                                <header class="major">
-                                    <h2>Photography</h2>
-                                </header>
-                                <p>As a passionate photographer, you'll find some of my best landscape shots here.</p>
-                                <div class="posts">
-                                    <article>
-                                        <!-- Image 1 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic01.jpg')">
-                                            <img src="images/pic01.jpg" alt="" />
-                                        </a>
-                                        <h3>Le Lauzet-Ubaye, Alpes-de-Haute-Provence, France</h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 2 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic02.jpg')">
-                                            <img src="images/pic02.jpg" alt="" />
-                                        </a>
-                                        <h3>Les Orres, Hautes-Alpes, France</h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 3 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic03.jpg')">
-                                            <img src="images/pic03.jpg" alt="" />
-                                        </a>
-                                        <h3>Vue sur le Mont Aiguille - Massif du Vercors, Isère, France </h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 4 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic04.jpg')">
-                                            <img src="images/pic04.jpg" alt="" />
-                                        </a>
-                                        <h3>Baie d'Arromanche-les-Bains, Calvados, France</h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 5 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic05.jpg')">
-                                            <img src="images/pic05.jpg" alt="" />
-                                        </a>
-                                        <h3>Falaises d'Étretat, Seine-Maritime, France</h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 6 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic06.jpg')">
-                                            <img src="images/pic06.jpg" alt="" />
-                                        </a>
-                                        <h3>Corniglia, Ligurie, Italie </h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 7 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic07.jpg')">
-                                            <img src="images/pic07.jpg" alt="" />
-                                        </a>
-                                        <h3>Virage de l'ours, Osani, Corsica</h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 8 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic08.jpg')">
-                                            <img src="images/pic08.jpg" alt="" />
-                                        </a>
-                                        <h3>Cap Corse, Corsica</h3>
-                                    </article>
-                                    <article>
-                                        <!-- Image 8 -->
-                                        <a href="#" class="image" onclick="openFullScreen('images/pic09.jpg')">
-                                            <img src="images/pic09.jpg" alt="" />
-                                        </a>
-                                        <h3>Bastia, Corsica</h3>
-                                    </article>
-                                </div>
-                            </section>
+    <nav>
+      <a href="index.html">Main</a> ·
+      <a href="photography.html">Photography</a> ·
+    </nav>
+    
+  </header>
 
-						</div>
-					</div>
-                
-                <!-- Full-screen overlay container -->
-                <div id="overlay" onclick="closeFullScreen()">
-                    <!-- Add an onclick event to close the full-screen overlay -->
-                    <img id="fullScreenImage" src="" alt="" />
-                </div>
+  <hr>
 
-                <script>
-                    function openFullScreen(imageSrc) {
-                        // Set the image source in the full-screen overlay
-                        document.getElementById('fullScreenImage').src = imageSrc;
-                        
-                        // Show the full-screen overlay
-                        document.getElementById('overlay').style.display = 'flex';
-                    }
+  <!-- Main Photography Section -->
+  <main>
+    <section>
+      <header>
+        <h2>Photography</h2>
+      </header>
 
-                    function closeFullScreen() {
-                        // Hide the full-screen overlay
-                        document.getElementById('overlay').style.display = 'none';
-                    }
-                </script>
+      <div class="posts">
+        <article>
+          <img src="figs/pics/pic01.jpg" alt="Le Lauzet-Ubaye" onclick="openFullScreen('figs/pics/pic01.jpg')">
+          <h3>Le Lauzet-Ubaye, Alpes-de-Haute-Provence, France</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic02.jpg" alt="Les Orres" onclick="openFullScreen('figs/pics/pic02.jpg')">
+          <h3>Les Orres, Hautes-Alpes, France</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic03.jpg" alt="Mont Aiguille" onclick="openFullScreen('figs/pics/pic03.jpg')">
+          <h3>Vue sur le Mont Aiguille - Massif du Vercors, Isère, France</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic04.jpg" alt="Baie d'Arromanche" onclick="openFullScreen('figs/pics/pic04.jpg')">
+          <h3>Baie d'Arromanche-les-Bains, Calvados, France</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic05.jpg" alt="Falaises d'Étretat" onclick="openFullScreen('figs/pics/pic05.jpg')">
+          <h3>Falaises d'Étretat, Seine-Maritime, France</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic06.jpg" alt="Corniglia" onclick="openFullScreen('figs/pics/pic06.jpg')">
+          <h3>Corniglia, Ligurie, Italie</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic07.jpg" alt="Virage de l'ours" onclick="openFullScreen('figs/pics/pic07.jpg')">
+          <h3>Virage de l'ours, Osani, Corsica</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic08.jpg" alt="Cap Corse" onclick="openFullScreen('figs/pics/pic08.jpg')">
+          <h3>Cap Corse, Corsica</h3>
+        </article>
+        <article>
+          <img src="figs/pics/pic09.jpg" alt="Bastia" onclick="openFullScreen('figs/pics/pic09.jpg')">
+          <h3>Bastia, Corsica</h3>
+        </article>
+      </div>
+    </section>
+  </main>
 
+  <!-- Full-screen overlay -->
+  <div id="overlay" onclick="closeFullScreen()">
+    <img id="fullScreenImage" src="" alt="">
+  </div>
 
-				<!-- Sidebar -->
-                <div id="sidebar">
-                    <div class="inner">
+  <script>
+    function openFullScreen(src) {
+      document.getElementById('fullScreenImage').src = src;
+      document.getElementById('overlay').style.display = 'flex';
+    }
+    function closeFullScreen() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
 
-                        <!-- Menu -->
-                        <nav id="menu">
-                            <header class="major">
-                                <h2>Menu</h2>
-                            </header>
-                            <ul>
-                                <li><a href="index.html">Homepage</a></li>
-                                <!-- <li><a href="https://scholar.google.com/citations?user=ZtzwcvsAAAAJ&hl=fr">Publications</a></li> -->
-                                <li>
-                                    <span class="opener">Personal Projects</span>
-                                    <ul>
-                                        <li><a href="fpv_drone_design.html">FPV Drone Design</a></li>
-                                        <li><a href="pneumonia_detection.html">Pneumonia Detection using Lipschitz Neural Network</a></li>
-                                        <!-- <li><a href="ppo.html">Understanding Proximal Policy Optimization with Super Mario Bros</a></li> -->
-                                        <!-- <li><a href="maxwell.html">MAXWELL: My Intelligent Assistant</a></li> -->
-                                    </ul>
-                                </li>
-                                <li><a href="music.html">Music</a></li>
-                                <li><a href="photography.html">Photography</a></li>
-                                <li><a href="documents/CV_AN.pdf" download="English CV">Download CV (EN)</a></li>
-                                <li><a href="documents/CV_FR.pdf" download="English FR">Download CV (FR)</a></li>
-                        </nav>
+  <hr>
 
-                        <!-- Section -->
-                            <section>
-                                <header class="major">
-                                    <h2>Get in touch</h2>
-                                </header>
-                                <ul class="contact">
-                                    <li class="icon solid fa-envelope"><a href="christophe.marabotto@epita.fr">christophe.marabotto@epita.fr</a></li>
-                                    <li class="icon solid fa-phone">
-                                        <!-- Use the tel: URI scheme to make the phone number clickable -->
-                                        <a href="tel:+33659562028">+33(0)659562028</a>
-                                    </li>
-                                </ul>
-                            </section>
+  <!-- Footer -->
+  <footer>
+    <p style="text-align:center;">© 2025 Christophe MARABOTTO</p>
+  </footer>
 
-                        <!-- Footer -->
-                            <footer id="footer">
-                                <p class="copyright">&copy; Christophe MARABOTTO. All rights reserved.</a></p>
-                            </footer>
-
-                    </div>
-                </div>
-
-        </div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

@@ -1,209 +1,164 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christophe Marabotto</title>
+  <link rel="stylesheet" href="css/latex.css">
 
-<html>
-	<head>
-		<title>Christophe MARABOTTO</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+  <style>
+    /* Extra local styles to complement latex.css */
+    .profile-pic {
+      display: block;
+      margin: 2rem auto 1rem auto; /* center and add spacing */
+      width: 300px;
+      height: 300px;
+      object-fit: cover;          /* crop image properly */
+      border-radius: 50%;         /* circular crop */
+      border: 2px solid #444;     /* subtle LaTeX-like outline */
+    }
+    header {
+      text-align: center;
+    }
+  </style>
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body>
+  <header>
+    <img src="figs/me.jpg" alt="Christophe Marabotto" class="profile-pic">
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+    <h1>Christophe Marabotto</h1>
+    <p><em>AI Research Engineer @ IRT Saint Exupéry</em></p>
 
-							<!-- Header -->
-								<header id="header">
-									<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
-									<ul class="icons">
-										<li><a href="https://github.com/cmarabotto/" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/christophe-marabotto/" class="icon brands fa-linkedin fa-2x"><span class="label">Linkedin</span></a></li>
-										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-										<!-- <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
-										<!-- <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li> -->
-									</ul>
-								</header>
+    <a href="doc/cv/Christophe_Marabotto_CV.pdf" download class="cv-button">Download CV</a>
 
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Christophe MARABOTTO</h1>
-											<p>AI Research Engineer</p>
-										</header>
-										<p>As a versatile Data Scientist, I bring extensive experience across diverse domains such as Earth Observation (Airbus Defence and Space), Spacecraft Rendezvous (IRT Saint Exupéry - RAPTOR), Neural Network Compression and Deployment (IRT Saint Exupéry - Confiance.ai), Anomaly Detection (Hexaglobe) and Natural Language Processing (IPSO Santé).</p>
-									</div>
-									<span class="image avatar">
-										<img src="images/avatar_5.png" alt="" />
-									</span>
-								</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Key skills</h2>
-									</header>
-									<div class="features">
-										<article>
-											<span class="icon solid fa-book"></span>
-											<div class="content">
-												<h3>Research</h3>
-												<p>Skilled in identifying and implementing cutting-edge methodologies to address complex research questions.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-database"></span>
-											<div class="content">
-												<h3>Data Science</h3>
-												<p>Experienced in data preprocessing, cleaning, and transformation to ensure data quality. Proficient in developing predictive models with expertise in computer vision using Deep Learning techniques for space applications.</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-code"></span>
-											<div class="content">
-												<h3>Software Engineering</h3>
-												<p>Proficient in programming languages such as Python and C++ working with a wide range of frameworks and tools like PyTorch, Tensorflow/Keras, Scikit-Learn, Pandas, OpenCV or Plotly.
-													Experienced in containerization technologies (Docker) and cloud platforms (GCP, AWS and Azure) for scalable and reliable deployment.
-												</p>
-											</div>
-										</article>
-										<article>
-											<span class="icon solid fa-microchip"></span>
-											<div class="content">
-												<h3>On-board Deployment</h3>
-												<p>Experienced in neural network optimization (quantization, pruning, etc.) and deployment on hardware targets (Nvidia GPUs and Xilinx FPGAs).</p>
-											</div>
-										</article>
-									</div>
-								</section>
-							<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Publications</h2>
-								</header>
-								<div class="posts">
-									<article>
-										<a class="image"><img src="images/ai4space2024.png" alt="" /></a>
-										<h4><i>Exploring AI-Based Satellite Pose Estimation: from Novel Synthetic Dataset to In-Depth Performance Evaluation</i>, AI4Space 2024</h4>
-										<ul class="actions">
-											<li><a href="https://aiforspace.github.io/2024/" class="button">Conference link</a></li>
-										</ul>
-									</article>
-									<article>
-										<a class="image"><img src="images/ERTS2024.png" alt="" /></a>
-										<h4><i>An Evaluation Bench for the Exploration of Machine Learning Deployment Solutions on Embedded Platforms</i>, ERTS 2024</h4>
-										<ul class="actions">
-											<li><a href="https://erts2024.org/" class="button">Conference link</a></li>
-										</ul>
-									</article>
-								</div>
-							</section>
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Personal Projects</h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a class="image"><img src="images/drone.png" alt="" /></a>
-											<h3>FPV Drone Design</h3>
-											<p>FPV drone racing (where FPV stands for first-person view) is a sport type where participants control drones, equipped with cameras while wearing googles showing the live stream camera feed from the drones.</p>
-											<ul class="actions">
-												<li><a href="fpv_drone_design.html" class="button">More</a></li>
-											</ul>
-										</article>
-										<!-- <article>
-											<a class="image"><img src="images/super_mario_bros.png" alt="" /></a>
-											<h3>Understanding Proximal Policy Optimization with Super Mario Bros</h3>
-											<p> In progress</p>
-											<ul class="actions">
-												<li><a href="ppo.html" class="button">More</a></li>
-											</ul>
-										</article> -->
-										<article>
-											<a class="image"><img src="images/pneumonia_ds.png" alt="" /></a>
-											<h3>Pneumonia Detection using Convolutional Neural Network</h3>
-											<p>The aim of this work is to propose an efficient implementation to perform a binary classification task from annotated X-ray images.</p>
-											<p>This work implement the architecture proposed in the paper <a href=https://www.hindawi.com/journals/jhe/2019/4180949/ target="_blank">"An Efficient Deep Learning Approach to Pneumonia Classification in Healthcare, Journal of Healthcare Engineering, 2019, Okeke Stephen et al"</p>
-											<ul class="actions">
-												<li><a href="pneumonia_detection.html" class="button">More</a></li>
-											</ul>
-										</article>
-										<!-- <article>
-											<a class="image"><img src="images/maxwell.png" alt="" /></a>
-											<h3>MAXWELL: My Intelligent Assistant</h3>
-											<p>In progress</p>
-											<ul class="actions">
-												<li><a href="maxwell.html" class="button">More</a></li>
-											</ul>
-										</article> -->
-									</div>
-								</section>
-						</div>
-					</div>
-				
-					
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+    <nav>
+      <a href="index.html">Main</a> ·
+      <a href="photography.html">Photography</a> ·
+    </nav>
+    
+  </header>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<!-- <li><a href="https://scholar.google.com/citations?user=ZtzwcvsAAAAJ&hl=fr">Publications</a></li> -->
-										<li>
-											<span class="opener">Personal Projects</span>
-											<ul>
-												<li><a href="fpv_drone_design.html">FPV Drone Design</a></li>
-												<li><a href="pneumonia_detection.html">Pneumonia Detection using Lipschitz Neural Network</a></li>
-												<!-- <li><a href="ppo.html">Understanding Proximal Policy Optimization with Super Mario Bros</a></li> -->
-												<!-- <li><a href="maxwell.html">MAXWELL: My Intelligent Assistant</a></li> -->
-											</ul>
-										</li>
-										<li><a href="music.html">Music</a></li>
-										<li><a href="photography.html">Photography</a></li>
-										<li><a href="documents/CV_AN.pdf" download="English CV">Download CV (EN)</a></li>
-										<li><a href="documents/CV_FR.pdf" download="English FR">Download CV (FR)</a></li>
-								</nav>
+  <hr>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="christophe.marabotto@epita.fr">christophe.marabotto@epita.fr</a></li>
-										<li class="icon solid fa-phone">
-											<!-- Use the tel: URI scheme to make the phone number clickable -->
-											<a href="tel:+33659562028">+33(0)659562028</a>
-										</li>
-									</ul>
-								</section>
+  <main>
+    <h2>About</h2>
+    <p>
+      As a versatile Data Scientist, I bring extensive experience across diverse domains such as Earth Observation (Airbus Defence and Space), Spacecraft Rendezvous (IRT Saint Exupéry - RAPTOR), Neural Network Compression and Deployment (IRT Saint Exupéry - Confiance.ai), Anomaly Detection (Hexaglobe) and Natural Language Processing (IRT Saint Exupéry - RAKEL / ipso santé).
+    </p>
+    
+    <h3>Education</h3>
+    <ul>
+    <li>
+        <strong>Diplôme d’ingénieur – EPITA</strong>, Paris, France (2018–2021)<br>
+        Specialized in Data Science and Artificial Intelligence (SCIA).<br>
+        Main subjects: Mathematics, Algorithmics, and Data Science.
+    </li>
+    <li>
+        <strong>Preparatory Classes (PCSI/PSI) – Lycée Alphonse Daudet</strong>, Nîmes, France (2016–2018)<br>
+        Main subjects: Mathematics, Physics, and Engineering Sciences.
+    </li>
+    </ul>
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Christophe MARABOTTO. All rights reserved.</a></p>
-								</footer>
+    <h3>Work Experience</h3>
+    <ul>
+    <li>
+        <strong>AI Research Engineer – IRT Saint Exupéry</strong>, Toulouse, France
+        <ul>
+        <li>
+            <strong>AIxIA (Artificial Intelligence for Interference Analysis)</strong> – Ongoing<br>
+            PM acting: Coordination of activities.<br>
+            Leading the development of explainable language-based approaches for interference identification on multi-core processors.
+        </li>
+        <li>
+            <strong>RAKEL (Robust and Accurate Knowledge Extraction by LLM)</strong> – Ongoing<br>
+            Hallucination Detection for NOTAM Classification.
+        </li>
+        <li>
+            <strong>RAPTOR (Robotic and Artificial Intelligence Processing Test On Representative Target)</strong> – 3 years (70%)<br>
+            Leading the development of deep learning models for non-cooperative spacecraft rendezvous missions (Pose Estimation).<br>
+            Design of a synthetic dataset. Optimization and deployment on space flight hardware.
+        </li>
+        <li>
+            <strong>Confiance.ai (Grand Défi "Securing, certifying and enhancing the reliability of systems based on artificial intelligence")</strong> – 3 years (30%)<br>
+            Development of a test bench for optimizing and evaluating neural networks on FPGAs using Vitis AI (AMD).<br>
+            Study of semantic preservation for AI certification.
+        </li>
+        </ul>
+    </li>
 
-						</div>
-					</div>
+    <li>
+        <strong>Data Scientist – Airbus Defence and Space</strong>, Sophia Antipolis, France (End-of-studies Internship, 6 months, 2021)<br>
+        Semantic segmentation of high-resolution satellite images using Deep Learning within an Agile team.
+    </li>
 
-			</div>
+    <li>
+        <strong>End-of-study Project – ipso santé</strong>, Paris, France (2020–2021)<br>
+        Unsupervised clustering of medical reports using Topic Modelling techniques with a team of 4.
+    </li>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <li>
+        <strong>Data Scientist – Hexaglobe</strong>, Paris, France (Internship, 5 months, 2019–2020)<br>
+        Anomaly detection using Deep Learning for a streaming service for both marketing analysis and breakdown prediction using Keras, Kafka, and Google Cloud Platform.
+    </li>
+    </ul>
 
-	</body>
+
+    <h3>Public Scientific Communication</h3>
+  <ul>
+    <li>
+      <em>On-board AI for Critical Applications</em>,  
+      C. Marabotto, <strong>Robotop’IA 2025 / Workshop LIRMM</strong>. <a href="doc/slides/slides-robotopia-christophe-marabotto.pdf" target="_blank" class="pdf-button">[pdf]</a>
+    </li>
+    <li>
+      <em>An Evaluation Bench for the Exploration of Machine Learning Deployment Solutions on Embedded Platforms</em>,  
+      E. Jenn <em>et al.</em>, <strong>ERTS 2024</strong>. <a href="https://hal.science/hal-04584735v1/file/ERTS2024_bench.pdf" target="_blank" class="pdf-button">[pdf]</a>
+
+    </li>
+
+    <li>
+      <em>Exploring AI-Based Satellite Pose Estimation: from Novel Synthetic Dataset to In-Depth Performance Evaluation</em>,  
+      F. Gallet <em>et al.</em>, <strong>CVPRW 2024 (AI4Space)</strong>. <a href="https://openaccess.thecvf.com/content/CVPR2024W/AI4Space/papers/Gallet_Exploring_AI-Based_Satellite_Pose_Estimation_from_Novel_Synthetic_Dataset_to_CVPRW_2024_paper.pdf" target="_blank" class="pdf-button">[pdf]</a>
+    </li>
+  </ul>
+  </main>
+
+  <hr>
+
+  <!-- Section Contact / Get in touch -->
+    <h3>Get in touch</h3>
+
+    <ul class="contact icons">
+        <li>
+        <a href="mailto:christophe.marabotto@outlook.com" class="icon solid fa-envelope">
+            <span class="label">Email</span>
+        </a>
+        </li>
+        <li>
+        <a href="tel:+33659562028" class="icon solid fa-phone">
+            <span class="label">Phone</span>
+        </a>
+        </li>
+        <li>
+        <a href="https://www.linkedin.com/in/christophemarabotto" target="_blank" class="icon brands fa-linkedin">
+            <span class="label">LinkedIn</span>
+        </a>
+        </li>
+    </ul>
+    </section>
+
+    <footer>
+    <p>© 2025 Christophe MARABOTTO</p>
+    </footer>
+
+    <style>
+    footer {
+        text-align: center;
+        padding: 1rem 0;       /* optional: add vertical spacing */
+        font-size: 0.9rem;     /* optional: adjust font size */
+        color: #555;           /* optional: subtle color */
+    }
+    </style>
+</body>
 </html>
