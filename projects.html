@@ -82,69 +82,26 @@
 
   <hr>
 
-  <!-- Main Photography Section -->
+  <!-- Main  Section -->
   <main>
     <section>
       <header>
-        <h2>Photography</h2>
+        <h2>Projects</h2>
       </header>
 
       <div class="posts">
         <article>
-          <img src="figs/pics/pic01.jpg" alt="Le Lauzet-Ubaye" onclick="openFullScreen('figs/pics/pic01.jpg')">
-          <h3>Le Lauzet-Ubaye, Alpes-de-Haute-Provence, France</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic02.jpg" alt="Les Orres" onclick="openFullScreen('figs/pics/pic02.jpg')">
-          <h3>Les Orres, Hautes-Alpes, France</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic03.jpg" alt="Mont Aiguille" onclick="openFullScreen('figs/pics/pic03.jpg')">
-          <h3>Vue sur le Mont Aiguille - Massif du Vercors, Isère, France</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic04.jpg" alt="Baie d'Arromanche" onclick="openFullScreen('figs/pics/pic04.jpg')">
-          <h3>Baie d'Arromanche-les-Bains, Calvados, France</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic05.jpg" alt="Falaises d'Étretat" onclick="openFullScreen('figs/pics/pic05.jpg')">
-          <h3>Falaises d'Étretat, Seine-Maritime, France</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic06.jpg" alt="Corniglia" onclick="openFullScreen('figs/pics/pic06.jpg')">
-          <h3>Corniglia, Ligurie, Italie</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic07.jpg" alt="Virage de l'ours" onclick="openFullScreen('figs/pics/pic07.jpg')">
-          <h3>Virage de l'ours, Osani, Corsica</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic08.jpg" alt="Cap Corse" onclick="openFullScreen('figs/pics/pic08.jpg')">
-          <h3>Cap Corse, Corsica</h3>
-        </article>
-        <article>
-          <img src="figs/pics/pic09.jpg" alt="Bastia" onclick="openFullScreen('figs/pics/pic09.jpg')">
-          <h3>Bastia, Corsica</h3>
+          <a class="image">
+            <img src="figs/pics/drone.png" alt="FPV Drone" />
+          </a>
+          <h3>FPV Drone Design</h3>
+          <p>FPV drone racing (where FPV stands for first-person view) is a sport type where participants control drones, equipped with cameras while wearing googles showing the live stream camera feed from the drones. <a href="fpv-drone.html" class="button">[More]</a></p>
         </article>
       </div>
+
     </section>
   </main>
-
-  <!-- Full-screen overlay -->
-  <div id="overlay" onclick="closeFullScreen()">
-    <img id="fullScreenImage" src="" alt="">
-  </div>
-
-  <script>
-    function openFullScreen(src) {
-      document.getElementById('fullScreenImage').src = src;
-      document.getElementById('overlay').style.display = 'flex';
-    }
-    function closeFullScreen() {
-      document.getElementById('overlay').style.display = 'none';
-    }
-  </script>
-
+      
   <hr>
 
   <!-- Footer -->

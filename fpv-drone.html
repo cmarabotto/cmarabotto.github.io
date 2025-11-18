@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christophe Marabotto</title>
+  <link rel="stylesheet" href="css/latex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papXn3fY1sZs9cxZbKx9gDwGq0eShq6yI1F0Mjs1C2fR0AcWn1i+3BoH5h8NwzW1ZpSRz+RlRlP5+r6fj/0ZxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* Full-screen overlay */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Gallery styling */
+    .posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .posts article {
+      width: 300px;
+      text-align: center;
+    }
+    .posts img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: transform 0.2s;
+    }
+    .posts img:hover {
+      transform: scale(1.05);
+    }
+    /* Extra local styles to complement latex.css */
+    .profile-pic {
+      display: block;
+      margin: 2rem auto 1rem auto; /* center and add spacing */
+      width: 300px;
+      height: 300px;
+      object-fit: cover;          /* crop image properly */
+      border-radius: 50%;         /* circular crop */
+      border: 2px solid #444;     /* subtle LaTeX-like outline */
+    }
+    header {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="figs/me.jpg" alt="Christophe Marabotto" class="profile-pic">
+
+    <h1>Christophe Marabotto</h1>
+    <p><em>AI Research Engineer @ IRT Saint Exupéry</em></p>
+
+    <nav>
+      <a href="index.html">Main</a> ·
+      <a href="photography.html">Photography</a> ·
+      <a href="projects.html">Projects</a>
+    </nav>
+    
+  </header>
+
+  <hr>
+
+  <!-- Main Section -->
+  <main>
+    <section>
+      <header>
+        
+        <h2>FPV Drone Design</h2>
+      </header>
+
+      <p>FPV drone racing (where FPV stands for first-person view) is a sport type where participants control drones, equipped with cameras while wearing goggles showing the live stream camera feed from the drones.</p>
+
+      <hr>
+
+      <h3>Challenge</h3>
+      <p>The guiding principle is to keep the pilot actively engaged, preserving the satisfaction and expertise of manual flying instead of shifting control to automated systems. 
+         Our goal was to find the sweet spot between efficiency and cost to explore our planet, achieving:</p>
+      <ul>
+        <li>Total drone cost under <strong>€150</strong> (GoPro optional).</li>
+        <li>Maximum radio control (TX) and FPV (VTX) transmission range for long-distance exploration.</li>
+        <li>High-speed capability, even at the expense of battery life.</li>
+        <li>GPS-based Return-to-Home (RTH) in the event of TX link failure.</li>
+        <li>Comprehensive On-Screen Display (OSD) with telemetry (battery status, home point, altitude, latitude/longitude, etc.).</li>
+      </ul>
+
+      <p>To meet these needs, I have chosen to assemble my drone from the following components:</p>
+      <ul>
+        <li><strong>Frame:</strong> TBS SOURCE ONE V3</li>
+        <li><strong>Motors:</strong> EMAX ECO 2207 1700 kV (6S)</li>
+        <li><strong>Propellers:</strong> HQProp 5043 5x4.3</li>
+        <li><strong>Battery:</strong> TATTU R-LINE Version 3.0 22.2V 1300mAh 120C</li>
+        <li><strong>Flight Controller:</strong> MAMBA F405 MK2</li>
+        <li><strong>Camera:</strong> FOXEER PRADATOR V4</li>
+        <li><strong>VTX:</strong> TBS Unify Pro HV 5.8 GHz</li>
+        <li><strong>VTX Antenna:</strong> TBS TRIUMPH SMA 5.8GHz RHCP</li>
+        <li><strong>RX:</strong> TBS Crossfire Nano RX</li>
+        <li><strong>4K Camera:</strong> GoPro Hero 7 Black (HyperSmooth)</li>
+        <li><strong>Radio:</strong> Taranis X9D+ with TBS Crossfire Micro TX V2</li>
+        <li><strong>Goggles:</strong> Fatshark HDO 2 with Rapidfire</li>
+        <li><strong>VRX Antenna:</strong> X2-AIR TrueRC + TRIUMPH SMA, 5.8GHz RHCP</li>
+      </ul>
+
+       <p>
+         <em>Note:</em> FPV flight requires extensive training. I recommend spending several months on a simulator such as
+         <strong>Velocidrone</strong> or <strong>Liftoff</strong>, ideally using the real FPV remote control and goggles,
+         to prepare both reflexes and spatial perception.
+       </p>
+      <hr>
+
+      <h3>Setup</h3>
+      <img src="figs/pics/FPV_DRONE_SCHEMA.jpg" alt="FPV Drone Setup" style="width:100%; max-width:800px; border-radius:6px; display:block; margin:auto;">
+
+      <hr>
+
+      <h3>Flight Results</h3>
+      <video width="640" height="360" controls style="display:block; margin:auto;">
+        <source src="figs/video/filght_results.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p style="text-align:center;">© 2025 Christophe MARABOTTO</p>
+  </footer>
+
+</body>
+</html>
