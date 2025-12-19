@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christophe Marabotto</title>
+  <link rel="stylesheet" href="css/latex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papXn3fY1sZs9cxZbKx9gDwGq0eShq6yI1F0Mjs1C2fR0AcWn1i+3BoH5h8NwzW1ZpSRz+RlRlP5+r6fj/0ZxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* Full-screen overlay */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Gallery styling */
+    .posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .posts article {
+      width: 300px;
+      text-align: center;
+    }
+    .posts img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: transform 0.2s;
+    }
+    .posts img:hover {
+      transform: scale(1.05);
+    }
+    /* Extra local styles to complement latex.css */
+    .profile-pic {
+      display: block;
+      margin: 2rem auto 1rem auto; /* center and add spacing */
+      width: 300px;
+      height: 300px;
+      object-fit: cover;          /* crop image properly */
+      border-radius: 50%;         /* circular crop */
+      border: 2px solid #444;     /* subtle LaTeX-like outline */
+    }
+    header {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="figs/me.jpg" alt="Christophe Marabotto" class="profile-pic">
+
+    <h1>Christophe Marabotto</h1>
+    <p><em>AI Research Engineer @ IRT Saint Exupéry</em></p>
+
+    <nav>
+      <a href="index.html">Main</a> ·
+      <a href="photography.html">Photography</a> ·
+      <a href="projects.html">Projects</a>
+    </nav>
+    
+  </header>
+
+  <hr>
+
+  <!-- Main Section -->
+  <main>
+    <section>
+      <header>
+        
+        <h2>AI for Robotics</h2>
+      </header>
+
+      <p> </p>
+
+      <hr>
+    
+      <h3>Imitation Learning - Action Chunking with Transformers (ACT) </h3>
+      <p>Action Chunking with Transformers (ACT), a Conditional Variational Autoencoder (CVAE) introduced in the paper Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware by Zhao et al <a href="https://arxiv.org/pdf/2304.13705">[paper].</a> </p>
+      The policy was designed to enable precise, contact-rich manipulation tasks using affordable hardware and minimal demonstration data.
+
+        <p>Architecture :</p>
+            <ol>
+            <li><strong>Vision backbone</strong> : ResNet-18 CNN processes images from multiple camera viewpoints</li>
+            <li><strong>Teleoperation</strong></li>
+            <li><strong>Transformer Encoder</strong>: synthesize information from camera features, joint positions and a learned latent variable (z)</li>
+            <li><strong>Transformer Decoder</strong>: generates coherent action sequences using cross-attention</li>
+            </ol>
+        
+        <img src="figs/pics/ACT-architecture.png"
+        alt="ACT Architecture"
+        style="width:100%; max-width:800px; cursor: zoom-in;"
+        onclick="openImage(this.src)">
+
+        <div id="overlay" onclick="closeImage()">
+        <img id="overlay-img">
+        </div>
+
+        <script>
+        function openImage(src) {
+        const overlay = document.getElementById('overlay');
+        const overlayImg = document.getElementById('overlay-img');
+        overlayImg.src = src;
+        overlay.style.display = 'flex';
+        }
+
+        function closeImage() {
+        document.getElementById('overlay').style.display = 'none';
+        }
+        </script>
+
+
+
+       <h3>Setup</h3>
+       <p>We adopted a two-camera setup (stereoscopy), which is important for our badge pose estimation task, allowing the model to acquire a better depth estimate.
+       Camera resolution is 640x480px at 30 fps. </p>
+
+       <p>The model was trained to be robust to ego-motion and vibrations caused by a lightweight setup. 
+       It is important to correctly fix the pose of the arm, the cameras, and the RFID card reader, as these parameters will be learned by our model.</p> <br> 
+
+        <img src="figs/pics/imitation-learning-setup.png" 
+            alt="Imitation Learning Setup" 
+            onclick="openImage(this.src)"
+            style="width:100%; max-width:800px; border-radius:6px; display:block; margin:auto; cursor: zoom-in;">
+
+      <h3>Results</h3>
+       <h4>Task A. Point the red cross (first step)</h4>
+       <p>Dataset consists of 100 episodes varying cross position, background and lighting.</p>
+
+
+    <figure style="max-width:800px; margin: 2rem auto; text-align:center;">
+    <video controls style="width:100%; border-radius:8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <source src="figs/video/pointing-480.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <figcaption style="margin-top:10px; font-size:0.9rem; color:#666; line-height:1.4;">
+        Open-loop evaluation of ACT for pointing a red cross. Input stream (top) and PoV stream (bottom). The generalization capabilities of the model are in line with expectations.
+    </figcaption>
+    </figure>
+
+      <h4>Task B. Scan a badge</h4>
+      <p>Same setup (camera, arms, etc.).  Dataset consists of 100 episodes varying badge pose (position and orientation), background and lightning.</p>
+        
+      <p>This scenario is much more complex, leading to an increased dataset acquisition time. For example, we make sure not to pinch the fingers of the person holding out the badge (safety).
+        With this type of gripper, it is necessary to catch two edges of the badge to prevent it from slipping. This also makes it easier to scan the badge on a potential RFID card reader.
+      </p>
+    
+
+    <figure style="max-width:800px; margin: 2rem auto; text-align:center;">
+    <video controls style="width:100%; border-radius:8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <source src="figs/video/scanning-480.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <figcaption style="margin-top:10px; font-size:0.9rem; color:#666; line-height:1.4;">
+        <strong>Task B: Badge Scanning.</strong> Open-loop evaluation of ACT. 
+        The model demonstrates high frugality and generalization despite environmental noise.
+    </figcaption>
+    </figure>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p style="text-align:center;">© 2025 Christophe MARABOTTO</p>
+  </footer>
+
+  <script>
+  function openImage(src) {
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay-img');
+    overlayImg.src = src;
+    overlay.style.display = 'flex';
+  }
+
+  function closeImage() {
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

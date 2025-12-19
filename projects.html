@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christophe Marabotto</title>
+
+  <link rel="stylesheet" href="css/latex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    /* Gallery styling : horizontal scroll */
+    .posts {
+      display: flex;
+      flex-wrap: nowrap;          /* 🔑 empêche le retour à la ligne */
+      gap: 1.5rem;
+      overflow-x: auto;           /* 🔑 scroll horizontal */
+      padding: 1rem;
+      scroll-behavior: smooth;
+      justify-content: center; /* 🔑 centrage horizontal */
+    }
+
+    .posts article {
+      flex: 0 0 300px;            /* 🔑 largeur fixe des cartes */
+      text-align: center;
+    }
+
+    .posts img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: transform 0.2s;
+    }
+
+    .posts img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Profile picture */
+    .profile-pic {
+      display: block;
+      margin: 2rem auto 1rem auto;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #444;
+    }
+
+    header {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="figs/me.jpg" alt="Christophe Marabotto" class="profile-pic">
+  <h1>Christophe Marabotto</h1>
+  <p><em>AI Research Engineer @ IRT Saint Exupéry</em></p>
+
+  <nav>
+    <a href="index.html">Main</a> ·
+    <a href="photography.html">Photography</a> ·
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+
+<hr>
+
+<main>
+  <section>
+    <header>
+      <h2>Projects</h2>
+    </header>
+
+    <!-- 🔑 Un seul conteneur -->
+    <div class="posts">
+
+      <article>
+        <img src="figs/pics/drone.png" alt="FPV Drone">
+        <h3>FPV Drone Design</h3>
+        <p>
+          Building a Racing FPV Drone for High-Speed Exploration.
+          <a href="fpv-drone.html">[More]</a>
+        </p>
+      </article>
+
+      <article>
+        <img src="figs/pics/scanning.png" alt="Robotics">
+        <h3>AI for Robotics</h3>
+        <p>
+          Teaching complex object manipulation using Imitation Learning on the SO101 platform.
+          <a href="robotics.html">[More]</a>
+        </p>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<hr>
+
+<footer>
+  <p style="text-align:center;">© 2025 Christophe MARABOTTO</p>
+</footer>
+
+</body>
+</html>
