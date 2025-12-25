@@ -95,13 +95,12 @@
       <hr>
     
       <h3>Imitation Learning - Action Chunking with Transformers (ACT) </h3>
-      <p>Action Chunking with Transformers (ACT), a Conditional Variational Autoencoder (CVAE) introduced in the paper Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware by Zhao et al <a href="https://arxiv.org/pdf/2304.13705">[paper].</a> </p>
+      <p>Action Chunking with Transformers (ACT) is a Conditional Variational Autoencoder (CVAE) introduced in the paper Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware by Zhao et al <a href="https://arxiv.org/pdf/2304.13705">[paper].</a> </p>
       The policy was designed to enable precise, contact-rich manipulation tasks using affordable hardware and minimal demonstration data.
 
         <p>Architecture :</p>
             <ol>
             <li><strong>Vision backbone</strong> : ResNet-18 CNN processes images from multiple camera viewpoints</li>
-            <li><strong>Teleoperation</strong></li>
             <li><strong>Transformer Encoder</strong>: synthesize information from camera features, joint positions and a learned latent variable (z)</li>
             <li><strong>Transformer Decoder</strong>: generates coherent action sequences using cross-attention</li>
             </ol>
@@ -131,10 +130,10 @@
 
 
        <h3>Setup</h3>
-       <p>We adopted a two-camera setup (stereoscopy), which is important for our badge pose estimation task, allowing the model to acquire a better depth estimate.
+       <p>We adopted a two-camera setup (stereoscopy), allowing the model to acquire a better depth estimate.
        Camera resolution is 640x480px at 30 fps. </p>
 
-       <p>The model was trained to be robust to ego-motion and vibrations caused by a lightweight setup. 
+       <p>The model was trained to be robust to vibrations caused by a lightweight setup. 
        It is important to correctly fix the pose of the arm, the cameras, and the RFID card reader, as these parameters will be learned by our model.</p> <br> 
 
         <img src="figs/pics/imitation-learning-setup.png" 
@@ -153,7 +152,7 @@
         Your browser does not support the video tag.
     </video>
     <figcaption style="margin-top:10px; font-size:0.9rem; color:#666; line-height:1.4;">
-        Open-loop evaluation of ACT for pointing a red cross. Input stream (top) and PoV stream (bottom). The generalization capabilities of the model are in line with expectations.
+        Open-loop evaluation of ACT for pointing a red cross. Input stream (top) and PoV stream (bottom). The generalization capabilities of the model are in line with expectations (3D generalization).
     </figcaption>
     </figure>
 
@@ -171,7 +170,7 @@
         Your browser does not support the video tag.
     </video>
     <figcaption style="margin-top:10px; font-size:0.9rem; color:#666; line-height:1.4;">
-        <strong>Task B: Badge Scanning.</strong> Open-loop evaluation of ACT. 
+        <strong>Task B: Badge Scanning.</strong> Open-loop evaluation of ACT for badge scanning. 
         The model demonstrates high frugality and generalization despite environmental noise.
     </figcaption>
     </figure>

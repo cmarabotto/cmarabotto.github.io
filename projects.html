@@ -25,6 +25,39 @@
       text-align: center;
     }
 
+  <link rel="stylesheet" href="css/latex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papXn3fY1sZs9cxZbKx9gDwGq0eShq6yI1F0Mjs1C2fR0AcWn1i+3BoH5h8NwzW1ZpSRz+RlRlP5+r6fj/0ZxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* Full-screen overlay */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    #overlay img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Gallery styling */
+    .posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .posts article {
+      width: 300px;
+      text-align: center;
+    }
     .posts img {
       width: 100%;
       height: auto;
@@ -36,18 +69,16 @@
     .posts img:hover {
       transform: scale(1.05);
     }
-
-    /* Profile picture */
+    /* Extra local styles to complement latex.css */
     .profile-pic {
       display: block;
-      margin: 2rem auto 1rem auto;
+      margin: 2rem auto 1rem auto; /* center and add spacing */
       width: 300px;
       height: 300px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #444;
+      object-fit: cover;          /* crop image properly */
+      border-radius: 50%;         /* circular crop */
+      border: 2px solid #444;     /* subtle LaTeX-like outline */
     }
-
     header {
       text-align: center;
     }
@@ -80,7 +111,9 @@
     <div class="posts">
 
       <article>
-        <img src="figs/pics/drone.png" alt="FPV Drone">
+        <a href="fpv-drone.html">
+          <img src="figs/pics/drone.png" alt="FPV Drone">
+        </a>
         <h3>FPV Drone Design</h3>
         <p>
           Building a Racing FPV Drone for High-Speed Exploration.
@@ -89,13 +122,15 @@
       </article>
 
       <article>
-        <img src="figs/pics/scanning.png" alt="Robotics">
+        <a href="robotics.html">
+          <img src="figs/pics/scanning.png" alt="Robotics">
+        </a>
         <h3>AI for Robotics</h3>
         <p>
           Teaching complex object manipulation using Imitation Learning on the SO101 platform.
           <a href="robotics.html">[More]</a>
         </p>
-      </article>
+    </article>
 
     </div>
   </section>
@@ -106,6 +141,5 @@
 <footer>
   <p style="text-align:center;">© 2025 Christophe MARABOTTO</p>
 </footer>
-
 </body>
 </html>
